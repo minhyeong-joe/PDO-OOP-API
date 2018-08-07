@@ -55,7 +55,7 @@
               "author" => $author,
               "content" => $content,
               "user_key" => $user_key,
-              "timestamp" => $timestamp
+              "timestamp" => $time_stamp
             );
 
             array_push($response_arr['data'], $post_item);
@@ -91,7 +91,7 @@
             "author" => $author,
             "content" => $content,
             "user_key" => $user_key,
-            "timestamp" => $timestamp
+            "timestamp" => $time_stamp
           );
           array_push($response_arr['data'], $post_item);
 
@@ -120,7 +120,6 @@
       $posts->title = $data->title;
       $posts->content = $data->content;
       $posts->author = $data->author;
-      $posts->user_key = $data->user_key;
 
       if($newId = $posts->create()) {
         // fetch newly created data
@@ -134,7 +133,7 @@
           "author" => $author,
           "content" => $content,
           "user_key" => $user_key,
-          "timestamp" => $timestamp
+          "timestamp" => $time_stamp
         );
 
         array_push($response_arr['data'], $post_item);
@@ -179,7 +178,7 @@
           "author" => $author,
           "content" => $content,
           "user_key" => $user_key,
-          "timestamp" => $timestamp
+          "timestamp" => $time_stamp
         );
 
         $data = json_decode(file_get_contents("php://input"));
@@ -200,7 +199,7 @@
             "author" => $author,
             "content" => $content,
             "user_key" => $user_key,
-            "timestamp" => $timestamp
+            "timestamp" => $time_stamp
           );
 
           // populate response
